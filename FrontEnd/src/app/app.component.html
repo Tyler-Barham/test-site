@@ -1,0 +1,11 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center" class="spacing-top-sm spacing-bottom-sm">
+  <h1>
+    Staff Directory
+  </h1>
+</div>
+<div class="container">
+  <app-search-menu (updateStaff)="updateStaff($event)"></app-search-menu>
+  <div class="spacing-bottom-md"></div>
+  <app-staff-details *ngFor="let staff of allStaff" [staff]="staff"></app-staff-details>
+</div>
