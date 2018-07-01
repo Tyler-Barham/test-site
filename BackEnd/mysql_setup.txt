@@ -1,5 +1,9 @@
-DROP TABLE staff_details;
-DROP TABLE department_details;
+CREATE DATABASE websitetest;
+
+CREATE USER 'staffwebsite'@'localhost' IDENTIFIED WITH mysql_native_password BY 'websitepass';
+GRANT SELECT ON websitetest.* TO 'staffwebsite'@'localhost';
+
+USE websitetest;
 
 CREATE TABLE department_details (
     department_name VARCHAR(40) NOT NULL,
