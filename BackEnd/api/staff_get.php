@@ -7,7 +7,7 @@ parse_str($_SERVER['QUERY_STRING'], $queries);
 $condition = "";
 
 if ($queries['searchTerm']) {
-    $searchTerm = $queries['searchTerm'];
+    $searchTerm = mysqli_real_escape_string($mysqli, $queries['searchTerm']);
     switch ($queries['searchType']) {
         case "Name":
             $condition = "WHERE first_name LIKE '%$searchTerm%' OR last_name LIKE '%$searchTerm%'";
